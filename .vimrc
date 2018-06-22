@@ -48,6 +48,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'simeji/winresizer'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'Shougo/denite.nvim'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -284,7 +285,7 @@ let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <C-t> :NERDTreeToggle<CR>
@@ -354,7 +355,6 @@ set autoread
 inoremap <silent> jj <ESC>
 inoremap <silent> aa <ESC>A
 inoremap <silent> ZZ <ESC>ZZ
-inoremap <silent> def<Space> def<ESC>oend<ESC>kA<Space>
 
 "" Denite
 noremap sa :<c-u>Denite file_rec<CR>
