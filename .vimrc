@@ -113,7 +113,7 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'
 Plug 'thoughtbot/vim-rspec'
 Plug 'ecomba/vim-ruby-refactoring'
-
+Plug 'tpope/vim-endwise'
 
 "*****************************************************************************
 "*****************************************************************************
@@ -355,7 +355,6 @@ set autoread
 inoremap <silent> jj <ESC>
 inoremap <silent> aa <ESC>A
 inoremap <silent> ZZ <ESC>ZZ
-inoremap <silent> def<Space> def<ESC>oend<ESC>kA<Space>
 
 "" Denite
 noremap sa :<c-u>Denite file_rec<CR>
