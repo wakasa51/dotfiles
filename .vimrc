@@ -361,6 +361,7 @@ noremap sa :<c-u>Denite file_rec<CR>
 noremap sf :<c-u>Denite buffer<CR>
 noremap sg :<c-u>Denite grep<CR>
 noremap sc :<c-u>DeniteCursorWord grep<CR>
+noremap sv :<c-u>Denite -resume<CR>
 call denite#custom#map('insert', '<C-s>', '<denite:do_action:vsplit>')
 call denite#custom#map('insert', '<C-i>', '<denite:do_action:split>')
 call denite#custom#map('insert', '<C-t>', '<denite:do_action:tabopen>')
@@ -564,10 +565,8 @@ vnoremap <leader>rrlv :RRenameLocalVariable<cr>
 vnoremap <leader>rriv :RRenameInstanceVariable<cr>
 vnoremap <leader>rem  :RExtractMethod<cr>
 
-" Ruby補完 vim-monster
-" gem install solargraphが必要
 let g:monster#completion#backend = 'solargraph'
-let g:monster#completion#rcodetools#backend = "async_rct_complete"
+let g:monster#completion#solargraph#backend = "async_solargraph_suggest"
 let g:deoplete#sources#omni#input_patterns = {
 \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
 \}
