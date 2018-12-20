@@ -3,5 +3,7 @@ if [ -f ~/.bashrc ]; then
 fi
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH="${HOME}/.ndenv/bin:${PATH}"
+eval "$(ndenv init -)"
 exec fish
 
