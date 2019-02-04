@@ -472,7 +472,6 @@ noremap XX "+x<CR>
 
 if has('macunix')
   " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
 
