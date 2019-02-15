@@ -97,11 +97,9 @@ Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
-
 " javascript
 "" Javascript Bundle
 Plug 'jelera/vim-javascript-syntax'
-
 
 " ruby
 Plug 'tpope/vim-rails'
@@ -128,7 +126,6 @@ call plug#end()
 " Required:
 filetype plugin indent on
 
-
 "*****************************************************************************
 "" Basic Setup
 "*****************************************************************************"
@@ -152,7 +149,7 @@ set autoindent
 set smartindent
 
 "" Map leader to ,
-let mapleader=','
+let mapleader="\<Space>"
 
 "" Enable hidden buffers
 set hidden
@@ -291,7 +288,7 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 
 " grep.vim
-nnoremap <silent> <leader>f :Rgrep<CR>
+nnoremap <silent> <leader>rg :Rgrep<CR>
 let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
@@ -357,23 +354,23 @@ inoremap <silent> aa <ESC>A
 inoremap <silent> ZZ <ESC>ZZ
 
 "" Denite
-noremap sa :<c-u>Denite file_rec<CR>
-noremap sf :<c-u>Denite buffer<CR>
-noremap sg :<c-u>Denite grep<CR>
-noremap sc :<c-u>DeniteCursorWord grep<CR>
-noremap sv :<c-u>Denite -resume<CR>
-call denite#custom#map('insert', '<C-s>', '<denite:do_action:vsplit>')
-call denite#custom#map('insert', '<C-i>', '<denite:do_action:split>')
-call denite#custom#map('insert', '<C-t>', '<denite:do_action:tabopen>')
-call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>')
-call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>')
-call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git', ''])
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
+" noremap sa :<c-u>Denite file_rec<CR>
+" noremap sf :<c-u>Denite buffer<CR>
+" noremap sg :<c-u>Denite grep<CR>
+" noremap sc :<c-u>DeniteCursorWord grep<CR>
+" noremap sv :<c-u>Denite -resume<CR>
+" call denite#custom#map('insert', '<C-s>', '<denite:do_action:vsplit>')
+" call denite#custom#map('insert', '<C-i>', '<denite:do_action:split>')
+" call denite#custom#map('insert', '<C-t>', '<denite:do_action:tabopen>')
+" call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>')
+" call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>')
+" call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git', ''])
+" call denite#custom#var('grep', 'command', ['rg'])
+" call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
+" call denite#custom#var('grep', 'recursive_opts', [])
+" call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+" call denite#custom#var('grep', 'separator', ['--'])
+" call denite#custom#var('grep', 'final_opts', [])
 
 "" Split
 noremap <Leader>h :<C-u>split<CR>
@@ -413,6 +410,18 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <silent> <leader>ff :FZF -m<CR>
+nnoremap <silent> <leader>fgl :GFiles<CR>
+nnoremap <silent> <leader>fgs :GFiles?<CR>
+nnoremap <silent> <leader>fb :Buffers<CR>
+nnoremap <silent> <leader>fr :Rg<Space>
+nnoremap <silent> <leader>fhc :History:<CR>
+nnoremap <silent> <leader>fhs :History/<CR>
+nnoremap <silent> <leader>fc :Commands<CR>
+nnoremap <silent> <leader>fgl :GFiles<CR>
+nnoremap <silent> <leader>fm :Maps<CR>
+nnoremap <silent> <leader>fhl :Helptags<CR>
 
 " The Silver Searcher
 if executable('ag')
@@ -424,12 +433,14 @@ endif
 if executable('rg')
   let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
   set grepprg=rg\ --vimgrep
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+  command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+  " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 endif
-
-cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>e :FZF -m<CR>
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
