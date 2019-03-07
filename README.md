@@ -40,11 +40,11 @@ load Averageは待っているタスクの数（タスクとは何かはわか�
 - sudo strace -p プロセスID
   - プロセスの状況を見る
 
--コンテナ内に入る方法
+- コンテナ内に入る方法
   - docker
-    - docker container run -it registry.peing.net/hikakaku-web-staging:91cdf483d-dirty-0664af1 /bin/sh
+    - docker container run -it コンテナ名 /bin/sh
   - kubernetes
-    - kubectl -n hikakaku-staging exec -it web-85c96f9494-9jlq2 /bin/bash
+    - kubectl -n hikakaku-staging exec -it コンテナ名 /bin/bash
 
 - docker stagingでdocker containerにssh hikakaku_docker_stagingから入る方法
 docker ps
