@@ -1,11 +1,19 @@
 # dotfiles
 ln -s ~/dotfiles/.vimrc ~/.vimrc
+
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
 # fish
 下記のリンクにしたがってfish及びfishermanのプラグインを使う
 http://techblog.lclco.com/entry/2018/02/27/083000
+
+# vim
+最初にvim-plugをインストールする
+https://qiita.com/kouichi_c/items/e19ccf94b8e5ab6ed18e
+
+なお、colorscheme solarizedは端末の色もsolorizedにしないとおかしな色になるので、できない場合は、molokaiがlucarioにする。
 
 # メモ集
 ## フロント系
