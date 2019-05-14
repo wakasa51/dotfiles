@@ -15,6 +15,13 @@ https://qiita.com/kouichi_c/items/e19ccf94b8e5ab6ed18e
 
 なお、colorscheme solarizedは端末の色もsolorizedにしないとおかしな色になるので、できない場合は、molokaiがlucarioにする。
 
+### deoplete
+deopleteを使うためにpython3をインストールしなければならないが、pyenvではなく、brew install python3で行う。
+
+(そうしないと動かない…)
+
+vimもbrew install vimで行う。
+
 # メモ集
 ## フロント系
 フロントエンド
