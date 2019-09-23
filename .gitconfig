@@ -1,4 +1,5 @@
 [alias]
+  aliases = config --get-regexp alias
   co = checkout
   st = status
   ci = commit -v
@@ -8,8 +9,11 @@
   br = branch
   lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
   cancel = !git commit -a -m 'Temporary commit for cancel' && git reset --hard HEAD~
-  push = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
-  plc = !git pull upstream $(git symbolic-ref --short HEAD)
+  push = push --set-upstream origin HEAD
+  psu = push --set-upstream upstream HEAD
+  pso = push --set-upstream origin HEAD
+  plu = !git pull upstream $(git rev-parse --abbrev-ref HEAD)
+  plo = !git pull origin $(git rev-parse --abbrev-ref HEAD)
 [push]
   default = simple
   followTags = true

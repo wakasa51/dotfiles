@@ -95,6 +95,7 @@ Plug 'honza/vim-snippets'
 Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'raphamorim/lucario'
+Plug 'morhetz/gruvbox'
 
 "*****************************************************************************
 "" Custom bundles
@@ -122,6 +123,9 @@ Plug 'ngmy/vim-rubocop'
 
 " C++
 Plug 'justmao945/vim-clang'
+
+" tmux
+Plug 'tpope/vim-dispatch'
 
 "*****************************************************************************
 "*****************************************************************************
@@ -426,7 +430,8 @@ nnoremap <silent> <leader>ff :FZF -m<CR>
 nnoremap <silent> <leader>fgl :GFiles<CR>
 nnoremap <silent> <leader>fgs :GFiles?<CR>
 nnoremap <silent> <leader>fb :Buffers<CR>
-nnoremap <silent> <leader>fr :Rg<Space>
+nnoremap <silent> <leader>fr :Rg<CR>
+nnoremap <silent> <leader>fu yiw:Rg<space><C-r>0<CR>
 nnoremap <silent> <leader>fhc :History:<CR>
 nnoremap <silent> <leader>fhs :History/<CR>
 nnoremap <silent> <leader>fc :Commands<CR>
@@ -505,6 +510,8 @@ if has('macunix')
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
 
+noremap <C-i> <C-i>
+
 "" Buffer nav
 noremap <leader>z :bp<CR>
 noremap <leader>q :bp<CR>
@@ -580,6 +587,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_command = "Dispatch bin/rspec {spec}"
 
 " For ruby refactory
 if has('nvim')
