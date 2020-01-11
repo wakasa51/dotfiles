@@ -307,6 +307,15 @@ nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
 
+let g:coc_global_extensions = [
+      \  'coc-lists'
+      \, 'coc-json'
+      \, 'coc-html'
+      \, 'coc-css'
+      \, 'coc-solargraph'
+      \, 'coc-snippets'
+      \ ]
+
 "*****************************************************************************
 "" Custom configs
 "*****************************************************************************
