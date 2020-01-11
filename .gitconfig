@@ -18,7 +18,7 @@
   default = simple
   followTags = true
 [pull]
-  rebase = preserve
+  rebase = merges
 [merge]
   ff = false
 [core]
