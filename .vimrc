@@ -267,6 +267,7 @@ nnoremap <Leader>of :.Gbrowse<CR>
 nnoremap <Leader>mp :!hub pull-request -o<CR>
 nnoremap <Leader>op :call whichpr#open_line()<CR>
 
+
 " coc.nvim
 " Better display for messages
 set cmdheight=2
