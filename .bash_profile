@@ -7,5 +7,6 @@ export PATH=$HOME/.nodenv/bin:$PATH
 eval "$(nodenv init -)"
 export PGDATA='/usr/local/var/postgres'
 export PATH="$PATH:$HOME/flutter/bin"
+export PATH="$PATH:$HOME/dotfiles/bin"
 # eval "$(hub alias -s)"
 exec fish

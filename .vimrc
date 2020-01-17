@@ -223,10 +223,6 @@ vmap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-"" Open current line on GitHub
-nnoremap <Leader>o :.Gbrowse<CR>
-nnoremap <Leader>mpr :!hub pull-request -o<CR>
-
 "" fzf.vim
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
@@ -262,11 +258,14 @@ endif
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gsh :Gpush<CR>
-noremap <Leader>gll :Gpull<CR>
+noremap <Leader>gpl :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
+nnoremap <Leader>of :.Gbrowse<CR>
+nnoremap <Leader>mp :!hub pull-request -o<CR>
+nnoremap <Leader>op :call whichpr#open_line()<CR>
 
 " coc.nvim
 " Better display for messages

@@ -29,6 +29,10 @@ https://qiita.com/kouichi_c/items/e19ccf94b8e5ab6ed18e
 
 なお、colorscheme solarizedは端末の色もsolorizedにしないとおかしな色になるので、できない場合は、molokaiがlucarioにする。
 
+## whichpr
+`~/.vim/autoload/` に下記の.vimファイルを置く
+https://github.com/pocke/whichpr/blob/master/autoload/whichpr.vim
+
 # メモ集
 ## フロント系
 フロントエンド
