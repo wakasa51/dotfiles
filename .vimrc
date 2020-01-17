@@ -225,6 +225,7 @@ vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
+nnoremap <Leader>mpr :!hub pull-request -o<CR>
 
 "" fzf.vim
 set wildmode=list:longest,list:full
