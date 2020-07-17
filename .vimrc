@@ -41,8 +41,16 @@ Plug 'altercation/vim-colors-solarized'
 "" Ruby
 Plug 'tpope/vim-endwise'
 
+"" JS/TS
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 "" completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -307,6 +315,7 @@ nnoremap <silent> <leader>cj  :<C-u>CocNext<CR>
 nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 let g:coc_global_extensions = [
       \  'coc-lists'
@@ -314,8 +323,12 @@ let g:coc_global_extensions = [
       \, 'coc-html'
       \, 'coc-css'
       \, 'coc-solargraph'
+      \, 'coc-tsserver'
+      \, 'coc-eslint'
+      \, 'coc-prettier'
       \, 'coc-snippets'
       \ ]
+let g:coc_disable_startup_warning = 1
 
 "*****************************************************************************
 "" Custom configs
