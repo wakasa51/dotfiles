@@ -327,6 +327,7 @@ let g:coc_global_extensions = [
       \, 'coc-eslint'
       \, 'coc-prettier'
       \, 'coc-snippets'
+      \, 'coc-clangd'
       \ ]
 let g:coc_disable_startup_warning = 1
 

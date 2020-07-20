@@ -9,6 +9,7 @@ export PGDATA='/usr/local/var/postgres'
 export PATH="$PATH:$HOME/flutter/bin"
 export PATH="$PATH:$HOME/dotfiles/bin"
 export PATH="$PATH:$HOME/.yvm/yvm"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 # eval "$(hub alias -s)"
 export YVM_DIR=/Users/takayasuma/.yvm
 [ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
