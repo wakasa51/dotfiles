@@ -50,8 +50,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "" completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 call plug#end()
 
 "*****************************************************************************
@@ -328,6 +326,7 @@ let g:coc_global_extensions = [
       \, 'coc-prettier'
       \, 'coc-snippets'
       \, 'coc-clangd'
+      \, 'coc-go'
       \ ]
 let g:coc_disable_startup_warning = 1
 
