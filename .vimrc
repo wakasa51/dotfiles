@@ -40,6 +40,7 @@ Plug 'altercation/vim-colors-solarized'
 
 "" Ruby
 Plug 'tpope/vim-endwise'
+Plug 'thoughtbot/vim-rspec'
 
 "" JS/TS
 Plug 'pangloss/vim-javascript'
@@ -285,6 +286,13 @@ nnoremap <Leader>of :.Gbrowse<CR>
 nnoremap <Leader>mp :!hub pull-request -o<CR>
 nnoremap <Leader>op :call whichpr#open_line()<CR>
 
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+
+" netrwは常にtree view
+let g:netrw_liststyle = 3
 
 " coc.nvim
 " Better display for messages
