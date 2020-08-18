@@ -20,7 +20,7 @@ http://techblog.lclco.com/entry/2018/02/27/083000
 
 # vim
 ```
-brew install vim ripgrep fzf tmux git
+brew install vim ripgrep fzf tmux git bat
 gem install solargraph
 ```
 
