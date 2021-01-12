@@ -5,6 +5,7 @@ export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 export PATH=$HOME/.nodenv/bin:$PATH
 eval "$(nodenv init -)"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PGDATA='/usr/local/var/postgres'
 export PATH="$PATH:$HOME/flutter/bin"
 export PATH="$PATH:$HOME/dotfiles/bin"

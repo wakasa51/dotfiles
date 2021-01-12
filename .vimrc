@@ -41,6 +41,7 @@ Plug 'altercation/vim-colors-solarized'
 "" Ruby
 Plug 'tpope/vim-endwise'
 Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-dispatch'
 
 "" JS/TS
 Plug 'pangloss/vim-javascript'
@@ -50,6 +51,8 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 "" completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -191,6 +194,8 @@ augroup vimrc-auto-mkdir  " {{{
   endfunction  " }}}
 augroup END  " }}}
 
+autocmd BufNewFile,BufRead *.jb setlocal ft=ruby
+
 set autoread
 
 "*****************************************************************************
@@ -291,6 +296,7 @@ nnoremap <Leader>op :call whichpr#open_line()<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
+let g:rspec_command = "Dispatch rspec {spec}"
 
 " netrwは常にtree view
 let g:netrw_liststyle = 3
@@ -300,6 +306,8 @@ let g:netrw_liststyle = 3
 set cmdheight=2
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
+
+let $NVIM_COC_LOG_LEVEL='debug'
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
