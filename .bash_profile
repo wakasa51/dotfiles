@@ -12,7 +12,9 @@ export PATH="$PATH:$HOME/dotfiles/bin"
 export PATH="$PATH:$HOME/.yvm/yvm"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 # eval "$(hub alias -s)"
+export PATH="/usr/local/opt/awscli@1/bin:$PATH"
 export YVM_DIR=/Users/takayasuma/.yvm
 [ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
 
+source "$HOME/.cargo/env"
 exec fish

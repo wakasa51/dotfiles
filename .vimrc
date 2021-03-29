@@ -49,6 +49,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+"" Rust
+Plug 'rust-lang/rust.vim'
+
 "" completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -356,8 +359,12 @@ let g:coc_global_extensions = [
       \, 'coc-snippets'
       \, 'coc-clangd'
       \, 'coc-go'
+      \, 'coc-rls'
       \ ]
 let g:coc_disable_startup_warning = 1
+
+" Rust
+let g:rustfmt_autosave = 1
 
 "*****************************************************************************
 "" Custom configs
