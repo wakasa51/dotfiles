@@ -123,6 +123,7 @@ set ruler
 set number
 
 let no_buffers_menu=1
+set background=dark
 colorscheme solarized
 
 "" Disable the blinking cursor.
@@ -212,6 +213,9 @@ inoremap <silent> ZZ <ESC>ZZ
 "" Tabs
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
+
+"" Backspace
+noremap! <C-?> <C-h>
 
 "" Switching windows
 noremap <C-j> <C-w>j
