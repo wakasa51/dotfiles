@@ -122,6 +122,10 @@ syntax on
 set ruler
 set number
 
+" vim内ターミナルの色をターミナルと合わせる
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+
 let no_buffers_menu=1
 set background=dark
 colorscheme solarized
@@ -222,6 +226,9 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
+
+" terminal short cut
+nnoremap <silent> <leader>ot :terminal<CR>
 
 " Disable visualbell
 set noerrorbells visualbell t_vb=
