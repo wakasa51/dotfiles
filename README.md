@@ -1,13 +1,7 @@
 # dotfiles
-ln -s ~/dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
+`init_for_mac.sh` を実行する
 
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile
-
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+`~/.gitconfig` の末尾に `email =` でメールアドレスを設定する
 
 # plugin
 fzf: https://github.com/junegunn/fzf#using-git
@@ -20,12 +14,11 @@ http://techblog.lclco.com/entry/2018/02/27/083000
 
 # vim
 ```
-brew install vim ripgrep fzf tmux git bat
-gem install solargraph
+brew install vim ripgrep fzf tmux git
 ```
 
 最初にvim-plugをインストールする
-https://qiita.com/kouichi_c/items/e19ccf94b8e5ab6ed18e
+https://github.com/junegunn/vim-plug
 
 なお、colorscheme solarizedは端末の色もsolorizedにしないとおかしな色になるので、できない場合は、molokaiがlucarioにする。
 
@@ -69,11 +62,3 @@ load Averageは待っているタスクの数（タスクとは何かはわか�
 - コンテナ内に入る方法
   - docker
     - docker container run -it コンテナ名 /bin/sh
-  - kubernetes
-    - kubectl -n hikakaku-staging exec -it コンテナ名 /bin/bash
-
-- docker stagingでdocker containerにssh hikakaku_docker_stagingから入る方法
-docker ps
-でプロセスを探して、port番号22番のを探して、
-ssh deploy@localhost -p35905
-で入る。
