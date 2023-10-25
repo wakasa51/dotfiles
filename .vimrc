@@ -52,12 +52,6 @@ Plug 'tpope/vim-endwise'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-dispatch'
 
-"" JS/TS
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-
 "" Rust
 Plug 'rust-lang/rust.vim'
 
@@ -66,7 +60,6 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
 
 Plug 'easymotion/vim-easymotion'
 
