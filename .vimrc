@@ -301,7 +301,7 @@ endif
 
 "" Git
 noremap <Leader>ga :Gwrite<CR>
-noremap <Leader>gc :Gcommit<CR>
+noremap <Leader>gc :Git commit<CR>
 noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gpl :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
