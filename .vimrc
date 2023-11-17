@@ -124,7 +124,8 @@ endif
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
-syntax on
+syntax enable
+filetype plugin indent on
 set ruler
 set number
 
