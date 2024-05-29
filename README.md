@@ -1,4 +1,7 @@
 # dotfiles
+デフォルトシェルをbashに変更する
+`chsh -s /bin/bash`
+
 `init_for_mac.sh` を実行する
 
 `~/.gitconfig` の末尾に `email =` でメールアドレスを設定する
